@@ -361,7 +361,7 @@ function About() {
             </div>
             <div className="about-highlight">
               <div className="about-highlight-icon">💝</div>
-              <div className="about-highlight-title">+200</div>
+              <div className="about-highlight-title">+100</div>
               <div className="about-highlight-text">Piezas creadas</div>
             </div>
             <div className="about-highlight">
@@ -503,16 +503,16 @@ function Footer() {
 // MODAL
 // ========================================
 function Modal({ product, onClose }) {
-  if (!product) return null
-
-  const categoryName = catalog.categories.find(c => c.id === product.category)?.name || product.category
-
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     return () => {
       document.body.style.overflow = 'auto'
     }
   }, [])
+
+  if (!product) return null
+
+  const categoryName = catalog.categories.find(c => c.id === product.category)?.name || product.category
 
   return (
     <div className="modal-overlay active" onClick={onClose}>
